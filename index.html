@@ -236,61 +236,68 @@
 
       <!-- right column (sidebar) -->
       <aside>
-        <div class="card contact" aria-labelledby="skillsTitle">
+        <!-- Skills & Tools card -->
+        <div class="card aside-card" id="skillsTools" aria-labelledby="skillsTitle">
           <h2 id="skillsTitle">Skills & Tools</h2>
-          <div style="margin-bottom:8px" class="muted">Technical stack grouped by domain</div>
-
-          <div style="margin-top:10px">
+          <p class="muted" style="margin-top:4px;">Technical stack grouped by domain</p>
+      
+          <div style="margin-top:12px">
             <h4 style="margin:6px 0">Programming</h4>
             <div class="stack" aria-hidden="true">
               <span class="chip">Go</span><span class="chip">C / C++</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MATLAB</span>
             </div>
           </div>
-
+      
           <div style="margin-top:12px">
             <h4 style="margin:6px 0">Platforms & Tools</h4>
             <div class="stack" aria-hidden="true">
               <span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Robot Framework</span><span class="chip">Git</span>
             </div>
           </div>
-
+      
           <div style="margin-top:12px">
             <h4 style="margin:6px 0">AI / Data</h4>
             <div class="stack" aria-hidden="true">
               <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Generative AI</span>
             </div>
           </div>
-
-          <div style="margin-top:14px">
-            <h4 style="margin:6px 0">Selected Skill Indicators</h4>
-
+      
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+      
+          <!-- Skill indicators -->
+          <div class="skill-indicators" aria-labelledby="skillIndicTitle">
+            <h3 id="skillIndicTitle" style="margin:0 0 8px 0;font-size:0.98rem">Selected Skill Indicators</h3>
+      
             <div class="skill-row">
               <div class="meta"><span>Automation & Testing</span><span class="muted">Expert</span></div>
-              <div class="bar"><i style="width:84%"></i></div>
+              <div class="bar"><i class="bar-fill" style="width:84%"></i></div>
             </div>
-
+      
             <div class="skill-row">
               <div class="meta"><span>Kubernetes & CI/CD</span><span class="muted">Strong</span></div>
-              <div class="bar"><i style="width:74%"></i></div>
+              <div class="bar"><i class="bar-fill" style="width:74%"></i></div>
             </div>
-
+      
             <div class="skill-row">
               <div class="meta"><span>Python / Go</span><span class="muted">Strong</span></div>
-              <div class="bar"><i style="width:72%"></i></div>
+              <div class="bar"><i class="bar-fill" style="width:72%"></i></div>
             </div>
           </div>
         </div>
-
-        <div class="card" style="margin-top:14px">
-          <h2>Contact</h2>
+      
+        <!-- Contact card (separate, prevents overlap) -->
+        <div class="card aside-card contact-card" style="margin-top:14px" aria-labelledby="contactTitle">
+          <h2 id="contactTitle">Contact</h2>
           <small class="muted">Open to opportunities • Collaboration • Consulting</small>
           <div style="height:8px"></div>
-          <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a><br>
-          <a href="tel:+918639848391">+91 86398 48391</a><br>
-          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener">linkedin.com/in/pediredla-girish-kumar-ec675</a>
+          <a href="mailto:pediredlagirishkumar@gmail.com" class="contact-link">pediredlagirishkumar@gmail.com</a>
+          <div style="height:6px"></div>
+          <a href="tel:+918639848391" class="contact-link">+91 86398 48391</a>
+          <div style="height:6px"></div>
+          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/pediredla-girish-kumar-ec675</a>
         </div>
       </aside>
-    </main>
+      
 
     <footer>
       <small>Portfolio auto-generated from uploaded resume. Source: :contentReference[oaicite:1]{index=1}</small>
