@@ -1,47 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Girish - Professional Portfolio">
-    <title>Girish | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Girish Kumar Pediredla — Engineer | Automation | Kubernetes | AI/ML" />
+  <title>Girish Kumar Pediredla | Portfolio</title>
+
+  <!-- Google font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Girish</h1>
-            <p class="tagline">Engineer | Innovator | Problem Solver</p>
+  <div class="page">
+
+    <!-- HERO / HEADER -->
+    <header class="hero">
+      <div class="hero-left">
+        <img src="images/profile.jpg" alt="Girish Kumar Pediredla — profile photo" class="profile-photo" />
+      </div>
+      <div class="hero-right">
+        <h1>Girish Kumar Pediredla</h1>
+        <p class="title">Engineer · Automation & Broadband · Kubernetes · AI/ML</p>
+
+        <div class="contact">
+          <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a>
+          <span>•</span>
+          <a href="tel:+918639848391">+91 86398 48391</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener">linkedin.com/in/pediredla-girish-kumar-ec675</a>
+          <div class="location">Bangalore, India</div>
         </div>
+
+        <div class="cta">
+          <a class="btn" href="Resume_3.pdf" download>Download CV (PDF)</a>
+          <a class="btn btn-outline" href="#contact">Contact</a>
+        </div>
+
+        <p class="summary">
+          Experienced Automation Engineer focused on broadband product testing and scalable CI/CD deployments.
+          Skilled in Kubernetes, Robot Framework, Go, C/C++, Python, SQL and actively exploring AI/ML & LLMs.
+        </p>
+      </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <!-- NAV (quick links) -->
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
+    <main class="container">
+
+      <!-- ABOUT -->
+      <section id="about" class="card">
+        <h2>About</h2>
         <p>
-            I am an engineer with a passion for solving complex problems, building scalable solutions, and driving innovation through technology.
+          I am an engineer with a passion for solving complex problems, building scalable solutions, and driving
+          innovation through technology. I have a strong track record in automation testing for broadband systems,
+          integrations in CI/CD pipelines, and Kubernetes-based deployments. (Resume source: :contentReference[oaicite:1]{index=1})
         </p>
-    </section>
+      </section>
 
-    <section id="skills" class="container">
+      <!-- EXPERIENCE -->
+      <section id="experience" class="card">
+        <h2>Work Experience</h2>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jul 2023 — Present</div>
+          <div class="timeline-body">
+            <h3>Automation Engineer — Broadband Product (Access 4.0, A4)</h3>
+            <div class="company">Radisys India Pvt Ltd — Bangalore, India</div>
+            <ul>
+              <li>Conducted automation testing for Access 4.0, enhancing CI/CD efficiency using Kubernetes, Robot Framework, and Go.</li>
+              <li>Streamlined testing processes, reducing deployment time by <strong>30%</strong> and improving scalability.</li>
+              <li>Led agile sprint testing, optimizing test strategy and reducing post-release issues by <strong>20%</strong>.</li>
+              <li>Collaborated with development to identify/resolution critical defects before release — reducing bug rates by <strong>40%</strong>.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="card">
+        <h2>Personal Projects</h2>
+
+        <div class="projects-grid">
+          <div class="project">
+            <h4>Deep Reinforcement Learning for Trading</h4>
+            <div class="muted">Nov 2022 — Mar 2023</div>
+            <p>
+              Developed and trained DRL models to analyze historical market data and optimize trading strategies.
+              Implemented feature engineering, robust backtesting and risk management; demonstrated improved trade accuracy
+              and profitability.
+            </p>
+          </div>
+
+          <div class="project">
+            <h4>Neural Network-Based Automatic Image Captioning</h4>
+            <div class="muted">Sep 2022 — Nov 2022</div>
+            <p>
+              Built an image captioning pipeline using CNNs for feature extraction and LSTM-based sequence generation.
+              Improved performance via augmentation, hyperparameter tuning and transfer learning to produce high-quality captions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="card">
         <h2>Skills</h2>
-        <ul class="skills-list">
-            <li>Software Development</li>
-            <li>System Architecture</li>
-            <li>Cloud Solutions</li>
-            <li>Data Analysis</li>
-            <li>AI & Machine Learning</li>
-        </ul>
-    </section>
+        <div class="skills-wrap">
+          <!-- primary -->
+          <div class="skill-column">
+            <h4>Technical</h4>
+            <div class="badges">
+              <span class="badge">Go</span>
+              <span class="badge">C / C++</span>
+              <span class="badge">Python</span>
+              <span class="badge">SQL</span>
+              <span class="badge">HTML</span>
+              <span class="badge">MATLAB</span>
+            </div>
+          </div>
 
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <
+          <!-- infra -->
+          <div class="skill-column">
+            <h4>Platform / Tools</h4>
+            <div class="badges">
+              <span class="badge">Kubernetes</span>
+              <span class="badge">CI/CD</span>
+              <span class="badge">Robot Framework</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Agile</span>
+            </div>
+          </div>
+
+          <!-- ml -->
+          <div class="skill-column">
+            <h4>AI / Data</h4>
+            <div class="badges">
+              <span class="badge">Machine Learning</span>
+              <span class="badge">Deep Learning</span>
+              <span class="badge">Generative AI</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <ul class="education-list">
+          <li>
+            <strong>B.Tech — Electronics & Communication Engineering</strong><br />
+            National Institute of Technology Calicut, Kerala — 2019–2023 — CGPA: 8.45
+          </li>
+          <li>
+            <strong>Senior Secondary — Science</strong><br />
+            Sri Chaitanya Jr. College, Krishna District, Andhra Pradesh — 2017–2019 — CGPA: 9.94
+          </li>
+        </ul>
+      </section>
+
+      <!-- ACHIEVEMENTS & CERTS -->
+      <section id="achievements" class="card">
+        <h2>Achievements & Certifications</h2>
+        <ul>
+          <li>Contributed to more than 5 milestone releases and supported delivery of 100+ major releases at Radisys, improving delivery timelines by 30%.</li>
+          <li>Certificates: Python (Coursera), Machine Learning Specialization (Coursera), HTML (Coursera), Programming with Google Go (Coursera).</li>
+        </ul>
+      </section>
+
+      <!-- LANGUAGES / SOFT SKILLS / INTERESTS -->
+      <section id="misc" class="card grid-3">
+        <div>
+          <h3>Languages</h3>
+          <ul>
+            <li>English — Full Professional Proficiency</li>
+            <li>Telugu — Full Professional Proficiency</li>
+            <li>Hindi — Limited Working Proficiency</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Critical Thinking</li>
+            <li>Decision-making</li>
+            <li>Multitasking</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Interests</h3>
+          <ul>
+            <li>Reading Books</li>
+            <li>Cricket</li>
+            <li>Volleyball</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p>For opportunities or collaborations, email <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a> or call <a href="tel:+918639848391">+91 86398 48391</a>.</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <small>Built & maintained by Girish Kumar — automated portfolio generated from resume. Resume source: :contentReference[oaicite:2]{index=2}</small>
+    </footer>
+  </div>
+</body>
+</html>
