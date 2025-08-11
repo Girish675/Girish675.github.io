@@ -1,222 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Girish Kumar Pediredla — Engineer | Automation | Kubernetes | AI/ML" />
-  <title>Girish Kumar Pediredla | Portfolio</title>
+  <title>Girish Kumar Pediredla — Portfolio</title>
+  <meta name="description" content="Girish Kumar Pediredla — Automation Engineer · Kubernetes · CI/CD · AI/ML" />
 
-  <!-- Google font (optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+  /* ========================
+     Variables & base scale
+     ======================== */
+  :root{
+    --bg: #0b1220;
+    --card: rgba(255,255,255,0.03);
+    --glass: rgba(255,255,255,0.02);
+    --muted: #9fb0c4;
+    --accent: #06b6d4;
+    --accent-2: #60a5fa;
+    --text: #e6eef6;
+    --radius: 12px;
+    --max-width: 1100px;
+    --comfort: 1rem;
+    font-size: 16px;
+  }
+  /* light theme overrides */
+  :root[data-theme="light"]{
+    --bg: #f6fafc;
+    --card: rgba(2,6,23,0.03);
+    --glass: rgba(2,6,23,0.03);
+    --muted: #475569;
+    --text: #0b1220;
+    --accent:#0ea5a2;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; -webkit-font-smoothing:antialiased;background:linear-gradient(180deg,var(--bg),#071226);color:var(--text);line-height:1.45}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:var(--max-width);margin:28px auto;padding:20px}
+
+  /* Header */
+  header.top{
+    display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:18px;
+  }
+  .brand { display:flex; gap:16px; align-items:center; }
+  .logo {
+    width:68px;height:68px;border-radius:14px; overflow:hidden;flex:0 0 68px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:grid;place-items:center;font-weight:700;color:#022; font-family:Merriweather, serif; font-size:1.05rem;
+    box-shadow:0 8px 24px rgba(2,6,23,0.4);
+  }
+  .title-block h1{margin:0;font-size:1.35rem;letter-spacing:0.2px}
+  .title-block p{margin:3px 0 0;color:var(--muted);font-size:0.95rem}
+
+  /* header right actions */
+  .header-actions{display:flex;gap:10px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;font-weight:600;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021326;border:none;cursor:pointer
+  }
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+  .small{font-size:0.9rem;padding:6px 10px}
+
+  /* layout */
+  main{display:grid;grid-template-columns: 1fr 360px; gap:20px; align-items:start}
+  @media (max-width:980px){ main{grid-template-columns: 1fr 320px} }
+  @media (max-width:820px){ main{grid-template-columns:1fr} }
+
+  /* left column cards */
+  .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 28px rgba(2,6,23,0.45)}
+  .summary{display:flex;gap:16px;align-items:flex-start}
+  .profile-photo{width:116px;height:116px;border-radius:12px;background:linear-gradient(180deg,#0b1220,#102033);object-fit:cover;border:3px solid rgba(255,255,255,0.04)}
+  .about-text p{margin:0;color:var(--muted)}
+
+  /* sections */
+  h2{font-size:1.05rem;margin:0 0 10px}
+  .muted{color:var(--muted);font-size:0.95rem}
+
+  /* experience timeline */
+  .timeline{display:flex;flex-direction:column;gap:14px}
+  .job{display:grid;grid-template-columns:120px 1fr;gap:12px}
+  .job .period{color:var(--muted);font-size:0.9rem}
+  .job h3{margin:0;font-size:1rem}
+  .job .company{margin:6px 0;color:var(--muted)}
+
+  /* projects */
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .project{background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);padding:12px;border-radius:10px;transition:transform .18s ease, box-shadow .18s ease}
+  .project:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(2,6,23,0.5)}
+
+  /* skills column (right) */
+  aside .card{position:sticky;top:22px}
+  .stack{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;font-size:0.86rem}
+
+  /* skill bars (visual only) */
+  .skill-row{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+  .skill-row .meta{display:flex;justify-content:space-between;font-size:0.9rem;color:var(--muted)}
+  .bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+  .bar > i{display:block;height:100%;width:60%;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 16px rgba(6,182,212,0.12)}
+
+  /* contact card */
+  .contact small{color:var(--muted);display:block;margin-bottom:8px}
+  .contact a{display:inline-block;color:var(--text);word-break:break-all;font-weight:600}
+
+  /* footer */
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.88rem}
+
+  /* nav/hamburger for small screens */
+  .mobile-nav{display:none}
+  @media (max-width:820px){
+    header.top{flex-direction:column;align-items:stretch;gap:12px}
+    .header-actions{justify-content:space-between}
+    .mobile-nav{display:flex;gap:10px}
+  }
+
+  /* theme toggle icon */
+  .icon{width:18px;height:18px;display:inline-block;vertical-align:middle}
+
+  /* print rules: produce a clean single-page resume */
+  @media print{
+    body{background:white;color:#111}
+    .wrap{max-width:800px;margin:0;padding:0}
+    .btn, .header-actions, .brand .logo{display:none}
+    main{grid-template-columns:1fr;gap:8px}
+    .card{box-shadow:none;border-radius:0;padding:8px}
+    footer{display:none}
+  }
+
+  /* small helpers */
+  .muted-block{color:var(--muted);font-size:0.95rem}
+  </style>
 </head>
 <body>
-  <div class="page">
-
-    <!-- HERO / HEADER -->
-    <header class="hero">
-      <div class="hero-left">
-        <img src="images/profile.jpg" alt="Girish Kumar Pediredla — profile photo" class="profile-photo" />
+  <div class="wrap" id="page">
+    <!-- top header -->
+    <header class="top" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">GK</div>
+        <div class="title-block">
+          <h1>Girish Kumar Pediredla</h1>
+          <p class="muted">Automation Engineer · Broadband · Kubernetes · CI/CD · AI/ML</p>
+        </div>
       </div>
-      <div class="hero-right">
-        <h1>Girish Kumar Pediredla</h1>
-        <p class="title">Engineer · Automation & Broadband · Kubernetes · AI/ML</p>
 
-        <div class="contact">
-          <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a>
-          <span>•</span>
-          <a href="tel:+918639848391">+91 86398 48391</a>
-          <span>•</span>
-          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener">linkedin.com/in/pediredla-girish-kumar-ec675</a>
-          <div class="location">Bangalore, India</div>
+      <div class="header-actions" role="navigation" aria-label="actions">
+        <div class="mobile-nav muted-block">Bangalore • <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a></div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <a class="btn small" href="Resume_3.pdf" download aria-label="Download resume (PDF)">Download CV</a>
+          <button id="themeToggle" class="btn ghost small" title="Toggle theme">Toggle theme</button>
         </div>
-
-        <div class="cta">
-          <a class="btn" href="Resume_3.pdf" download>Download CV (PDF)</a>
-          <a class="btn btn-outline" href="#contact">Contact</a>
-        </div>
-
-        <p class="summary">
-          Experienced Automation Engineer focused on broadband product testing and scalable CI/CD deployments.
-          Skilled in Kubernetes, Robot Framework, Go, C/C++, Python, SQL and actively exploring AI/ML & LLMs.
-        </p>
       </div>
     </header>
 
-    <!-- NAV (quick links) -->
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <!-- main columns -->
+    <main>
+      <!-- left column -->
+      <div>
+        <!-- summary / about -->
+        <section class="card summary" aria-labelledby="aboutTitle">
+          <img src="images/profile.jpg" alt="Profile photo — Girish" class="profile-photo" onerror="this.style.display='none'">
+          <div class="about-text">
+            <h2 id="aboutTitle">About</h2>
+            <p class="muted">
+              Experienced Automation Testing Engineer with a strong track record in improving efficiency and scalability of broadband products at Radisys India Pvt Ltd.
+              Skilled in Kubernetes, Robot Framework, Go, C/C++, Python, and SQL. Proven ability to streamline testing processes and reduce defects.
+            </p>
+            <p style="margin-top:10px" class="muted-block">Contact: <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a> • +91 86398 48391 • Bangalore</p>
+          </div>
+        </section>
 
-    <main class="container">
+        <!-- Experience -->
+        <section class="card" aria-labelledby="expTitle">
+          <h2 id="expTitle">Work Experience</h2>
+          <div class="timeline">
+            <div class="job">
+              <div class="period">Jul 2023 — Present</div>
+              <div>
+                <h3>Automation Engineer — Broadband Product (Access 4.0, A4)</h3>
+                <div class="company muted">Radisys India Pvt Ltd — Bangalore, India</div>
+                <ul class="muted-block">
+                  <li>Led automation testing for Access 4.0 using Kubernetes, Robot Framework and Go.</li>
+                  <li>Streamlined test processes—reduced deployment time and improved scalability across CI/CD pipelines.</li>
+                  <li>Worked closely with development teams, decreasing post-release issues and improving product stability.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="card">
-        <h2>About</h2>
-        <p>
-          I am an engineer with a passion for solving complex problems, building scalable solutions, and driving
-          innovation through technology. I have a strong track record in automation testing for broadband systems,
-          integrations in CI/CD pipelines, and Kubernetes-based deployments. (Resume source: :contentReference[oaicite:1]{index=1})
-        </p>
-      </section>
+        <!-- Projects -->
+        <section class="card" aria-labelledby="projTitle">
+          <h2 id="projTitle">Selected Projects</h2>
+          <div class="projects-grid">
+            <div class="project">
+              <strong>Deep Reinforcement Learning for Trading</strong>
+              <div class="muted">Nov 2022 — Mar 2023</div>
+              <p class="muted-block" style="margin-top:8px">
+                Developed DRL models for market-data-driven trading strategies. Built robust backtesting and risk controls; improved decision accuracy via feature engineering.
+              </p>
+            </div>
 
-      <!-- EXPERIENCE -->
-      <section id="experience" class="card">
-        <h2>Work Experience</h2>
+            <div class="project">
+              <strong>Neural Network-Based Image Captioning</strong>
+              <div class="muted">Sep 2022 — Nov 2022</div>
+              <p class="muted-block" style="margin-top:8px">
+                Architected a CNN + LSTM pipeline for image caption generation, used augmentation, transfer learning and hyperparameter tuning to boost results.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <article class="timeline-item">
-          <div class="timeline-date">Jul 2023 — Present</div>
-          <div class="timeline-body">
-            <h3>Automation Engineer — Broadband Product (Access 4.0, A4)</h3>
-            <div class="company">Radisys India Pvt Ltd — Bangalore, India</div>
-            <ul>
-              <li>Conducted automation testing for Access 4.0, enhancing CI/CD efficiency using Kubernetes, Robot Framework, and Go.</li>
-              <li>Streamlined testing processes, reducing deployment time by <strong>30%</strong> and improving scalability.</li>
-              <li>Led agile sprint testing, optimizing test strategy and reducing post-release issues by <strong>20%</strong>.</li>
-              <li>Collaborated with development to identify/resolution critical defects before release — reducing bug rates by <strong>40%</strong>.</li>
+        <!-- Education / Achievements -->
+        <section class="card" aria-labelledby="eduTitle">
+          <h2 id="eduTitle">Education & Certifications</h2>
+          <div class="muted-block">
+            <strong>B.Tech — Electronics & Communication Engineering</strong><br>
+            National Institute of Technology Calicut — 2019–2023 — CGPA: 8.45
+          </div>
+          <div style="height:12px"></div>
+          <div class="muted-block">
+            <strong>Senior Secondary — Science</strong><br>
+            Sri Chaitanya Jr. College — 2017–2019 — CGPA: 9.94
+          </div>
+
+          <div style="margin-top:12px">
+            <h3 style="margin:8px 0 6px 0">Certifications & Achievements</h3>
+            <ul class="muted-block">
+              <li>Python (Coursera); Machine Learning Specialization (Coursera); Programming with Google Go (Coursera)</li>
+              <li>Supported delivery of 100+ releases; contributed to 5+ milestone releases — improved delivery timelines and QA outcomes.</li>
             </ul>
           </div>
-        </article>
-      </section>
+        </section>
+      </div>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="card">
-        <h2>Personal Projects</h2>
+      <!-- right column (sidebar) -->
+      <aside>
+        <div class="card contact" aria-labelledby="skillsTitle">
+          <h2 id="skillsTitle">Skills & Tools</h2>
+          <div style="margin-bottom:8px" class="muted">Technical stack grouped by domain</div>
 
-        <div class="projects-grid">
-          <div class="project">
-            <h4>Deep Reinforcement Learning for Trading</h4>
-            <div class="muted">Nov 2022 — Mar 2023</div>
-            <p>
-              Developed and trained DRL models to analyze historical market data and optimize trading strategies.
-              Implemented feature engineering, robust backtesting and risk management; demonstrated improved trade accuracy
-              and profitability.
-            </p>
-          </div>
-
-          <div class="project">
-            <h4>Neural Network-Based Automatic Image Captioning</h4>
-            <div class="muted">Sep 2022 — Nov 2022</div>
-            <p>
-              Built an image captioning pipeline using CNNs for feature extraction and LSTM-based sequence generation.
-              Improved performance via augmentation, hyperparameter tuning and transfer learning to produce high-quality captions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="card">
-        <h2>Skills</h2>
-        <div class="skills-wrap">
-          <!-- primary -->
-          <div class="skill-column">
-            <h4>Technical</h4>
-            <div class="badges">
-              <span class="badge">Go</span>
-              <span class="badge">C / C++</span>
-              <span class="badge">Python</span>
-              <span class="badge">SQL</span>
-              <span class="badge">HTML</span>
-              <span class="badge">MATLAB</span>
+          <div style="margin-top:10px">
+            <h4 style="margin:6px 0">Programming</h4>
+            <div class="stack" aria-hidden="true">
+              <span class="chip">Go</span><span class="chip">C / C++</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MATLAB</span>
             </div>
           </div>
 
-          <!-- infra -->
-          <div class="skill-column">
-            <h4>Platform / Tools</h4>
-            <div class="badges">
-              <span class="badge">Kubernetes</span>
-              <span class="badge">CI/CD</span>
-              <span class="badge">Robot Framework</span>
-              <span class="badge">Docker</span>
-              <span class="badge">Agile</span>
+          <div style="margin-top:12px">
+            <h4 style="margin:6px 0">Platforms & Tools</h4>
+            <div class="stack" aria-hidden="true">
+              <span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Robot Framework</span><span class="chip">Git</span>
             </div>
           </div>
 
-          <!-- ml -->
-          <div class="skill-column">
-            <h4>AI / Data</h4>
-            <div class="badges">
-              <span class="badge">Machine Learning</span>
-              <span class="badge">Deep Learning</span>
-              <span class="badge">Generative AI</span>
+          <div style="margin-top:12px">
+            <h4 style="margin:6px 0">AI / Data</h4>
+            <div class="stack" aria-hidden="true">
+              <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Generative AI</span>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <h4 style="margin:6px 0">Selected Skill Indicators</h4>
+
+            <div class="skill-row">
+              <div class="meta"><span>Automation & Testing</span><span class="muted">Expert</span></div>
+              <div class="bar"><i style="width:84%"></i></div>
+            </div>
+
+            <div class="skill-row">
+              <div class="meta"><span>Kubernetes & CI/CD</span><span class="muted">Strong</span></div>
+              <div class="bar"><i style="width:74%"></i></div>
+            </div>
+
+            <div class="skill-row">
+              <div class="meta"><span>Python / Go</span><span class="muted">Strong</span></div>
+              <div class="bar"><i style="width:72%"></i></div>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- EDUCATION -->
-      <section id="education" class="card">
-        <h2>Education</h2>
-        <ul class="education-list">
-          <li>
-            <strong>B.Tech — Electronics & Communication Engineering</strong><br />
-            National Institute of Technology Calicut, Kerala — 2019–2023 — CGPA: 8.45
-          </li>
-          <li>
-            <strong>Senior Secondary — Science</strong><br />
-            Sri Chaitanya Jr. College, Krishna District, Andhra Pradesh — 2017–2019 — CGPA: 9.94
-          </li>
-        </ul>
-      </section>
-
-      <!-- ACHIEVEMENTS & CERTS -->
-      <section id="achievements" class="card">
-        <h2>Achievements & Certifications</h2>
-        <ul>
-          <li>Contributed to more than 5 milestone releases and supported delivery of 100+ major releases at Radisys, improving delivery timelines by 30%.</li>
-          <li>Certificates: Python (Coursera), Machine Learning Specialization (Coursera), HTML (Coursera), Programming with Google Go (Coursera).</li>
-        </ul>
-      </section>
-
-      <!-- LANGUAGES / SOFT SKILLS / INTERESTS -->
-      <section id="misc" class="card grid-3">
-        <div>
-          <h3>Languages</h3>
-          <ul>
-            <li>English — Full Professional Proficiency</li>
-            <li>Telugu — Full Professional Proficiency</li>
-            <li>Hindi — Limited Working Proficiency</li>
-          </ul>
+        <div class="card" style="margin-top:14px">
+          <h2>Contact</h2>
+          <small class="muted">Open to opportunities • Collaboration • Consulting</small>
+          <div style="height:8px"></div>
+          <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a><br>
+          <a href="tel:+918639848391">+91 86398 48391</a><br>
+          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener">linkedin.com/in/pediredla-girish-kumar-ec675</a>
         </div>
-
-        <div>
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Critical Thinking</li>
-            <li>Decision-making</li>
-            <li>Multitasking</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Interests</h3>
-          <ul>
-            <li>Reading Books</li>
-            <li>Cricket</li>
-            <li>Volleyball</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <p>For opportunities or collaborations, email <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a> or call <a href="tel:+918639848391">+91 86398 48391</a>.</p>
-      </section>
-
+      </aside>
     </main>
 
-    <footer class="footer">
-      <small>Built & maintained by Girish Kumar — automated portfolio generated from resume. Resume source: :contentReference[oaicite:2]{index=2}</small>
+    <footer>
+      <small>Portfolio auto-generated from uploaded resume. Source: :contentReference[oaicite:1]{index=1}</small>
     </footer>
   </div>
+
+  <script>
+    // theme toggle: remembers user choice
+    (function(){
+      const root = document.documentElement;
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+      root.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+
+      const toggle = document.getElementById('themeToggle');
+      toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', current);
+        localStorage.setItem('theme', current);
+      });
+    })();
+  </script>
 </body>
 </html>
