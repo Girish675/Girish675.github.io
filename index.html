@@ -24,18 +24,17 @@
 
       <div class="header-actions" role="navigation" aria-label="actions">
         <div class="mobile-nav muted-block">Bangalore • <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a></div>
-        <div style="display:flex;gap:8px;align-items:center">
+        <div class="header-buttons">
           <a class="btn small" href="Resume_3.pdf" download aria-label="Download resume (PDF)">Download CV</a>
           <button id="themeToggle" class="btn ghost small" title="Toggle theme" aria-pressed="false">Toggle theme</button>
         </div>
       </div>
     </header>
 
-    <!-- main content: left + right -->
     <main>
       <!-- LEFT COLUMN -->
       <div>
-        <!-- About / Summary -->
+        <!-- About -->
         <section class="card summary" aria-labelledby="aboutTitle">
           <img src="images/profile.jpg" alt="Profile photo — Girish" class="profile-photo" onerror="this.style.display='none'">
           <div class="about-text">
@@ -44,11 +43,11 @@
               Experienced Automation Testing Engineer with a strong track record in improving efficiency and scalability of broadband products at Radisys India Pvt Ltd.
               Skilled in Kubernetes, Robot Framework, Go, C/C++, Python, and SQL. Proven ability to streamline testing processes and reduce defects.
             </p>
-            <p style="margin-top:10px" class="muted-block">Contact: <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a> • +91 86398 48391 • Bangalore</p>
+            <p class="muted-block">Contact: <a href="mailto:pediredlagirishkumar@gmail.com">pediredlagirishkumar@gmail.com</a> • +91 86398 48391 • Bangalore</p>
           </div>
         </section>
 
-        <!-- Experience -->
+        <!-- Work Experience -->
         <section class="card" aria-labelledby="expTitle">
           <h2 id="expTitle">Work Experience</h2>
           <div class="timeline">
@@ -74,131 +73,92 @@
             <div class="project">
               <strong>Deep Reinforcement Learning for Trading</strong>
               <div class="muted">Nov 2022 — Mar 2023</div>
-              <p class="muted-block" style="margin-top:8px">
+              <p class="muted-block">
                 Developed DRL models for market-data-driven trading strategies. Built robust backtesting and risk controls; improved decision accuracy via feature engineering.
               </p>
             </div>
-
             <div class="project">
               <strong>Neural Network-Based Image Captioning</strong>
               <div class="muted">Sep 2022 — Nov 2022</div>
-              <p class="muted-block" style="margin-top:8px">
+              <p class="muted-block">
                 Architected a CNN + LSTM pipeline for image caption generation, used augmentation, transfer learning and hyperparameter tuning to boost results.
               </p>
             </div>
           </div>
         </section>
 
-        <!-- Education & Certs -->
+        <!-- Education -->
         <section class="card" aria-labelledby="eduTitle">
           <h2 id="eduTitle">Education & Certifications</h2>
           <div class="muted-block">
             <strong>B.Tech — Electronics & Communication Engineering</strong><br>
             National Institute of Technology Calicut — 2019–2023 — CGPA: 8.45
           </div>
-          <div style="height:12px"></div>
           <div class="muted-block">
             <strong>Senior Secondary — Science</strong><br>
             Sri Chaitanya Jr. College — 2017–2019 — CGPA: 9.94
           </div>
-
-          <div style="margin-top:12px">
-            <h3 style="margin:8px 0 6px 0">Certifications & Achievements</h3>
-            <ul class="muted-block">
-              <li>Python (Coursera); Machine Learning Specialization (Coursera); Programming with Google Go (Coursera)</li>
-              <li>Supported delivery of 100+ releases; contributed to 5+ milestone releases — improved delivery timelines and QA outcomes.</li>
-            </ul>
-          </div>
+          <h3>Certifications & Achievements</h3>
+          <ul class="muted-block">
+            <li>Python (NPTEL)</li>
+            <li>Machine Learning Specialization (Coursera)</li>
+            <li>Programming with Google Go (Coursera)<li>
+            <li>Supported delivery of 100+ releases; improved outcomes.</li>
+          </ul>
         </section>
       </div>
 
-      <!-- RIGHT COLUMN (aside) - REWRITTEN & FIXED -->
+      <!-- RIGHT COLUMN -->
       <aside>
-        <!-- Skills & Tools card -->
-        <div class="card aside-card" id="skillsTools" aria-labelledby="skillsTitle">
-          <h2 id="skillsTitle">Skills & Tools</h2>
-          <p class="muted" style="margin-top:4px;">Technical stack grouped by domain</p>
+        <!-- Skills -->
+        <div class="card aside-card" id="skillsTools">
+          <h2>Skills & Tools</h2>
+          <p class="muted">Technical stack grouped by domain</p>
+          <h4>Programming</h4>
+          <div class="stack"><span class="chip">Go</span><span class="chip">C / C++</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MATLAB</span></div>
+          <h4>Platforms & Tools</h4>
+          <div class="stack"><span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Robot Framework</span><span class="chip">Git</span></div>
+          <h4>AI / Data</h4>
+          <div class="stack"><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Generative AI</span></div>
 
-          <div style="margin-top:12px">
-            <h4 style="margin:6px 0">Programming</h4>
-            <div class="stack" aria-hidden="true">
-              <span class="chip">Go</span><span class="chip">C / C++</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MATLAB</span>
-            </div>
-          </div>
-
-          <div style="margin-top:12px">
-            <h4 style="margin:6px 0">Platforms & Tools</h4>
-            <div class="stack" aria-hidden="true">
-              <span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Robot Framework</span><span class="chip">Git</span>
-            </div>
-          </div>
-
-          <div style="margin-top:12px">
-            <h4 style="margin:6px 0">AI / Data</h4>
-            <div class="stack" aria-hidden="true">
-              <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Generative AI</span>
-            </div>
-          </div>
-
-          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
-
-          <!-- Skill indicators -->
-          <div class="skill-indicators" aria-labelledby="skillIndicTitle">
-            <h3 id="skillIndicTitle" style="margin:0 0 8px 0;font-size:0.98rem">Selected Skill Indicators</h3>
-
-            <div class="skill-row">
-              <div class="meta"><span>Automation & Testing</span><span class="muted">Expert</span></div>
-              <div class="bar"><i class="bar-fill" style="width:84%"></i></div>
-            </div>
-
-            <div class="skill-row">
-              <div class="meta"><span>Kubernetes & CI/CD</span><span class="muted">Strong</span></div>
-              <div class="bar"><i class="bar-fill" style="width:74%"></i></div>
-            </div>
-
-            <div class="skill-row">
-              <div class="meta"><span>Python / Go</span><span class="muted">Strong</span></div>
-              <div class="bar"><i class="bar-fill" style="width:72%"></i></div>
-            </div>
+          <div class="skill-indicators">
+            <h3>Selected Skill Indicators</h3>
+            <div class="skill-row"><div class="meta"><span>Automation & Testing</span><span class="muted">Expert</span></div><div class="bar"><i class="bar-fill" style="width:84%"></i></div></div>
+            <div class="skill-row"><div class="meta"><span>Kubernetes & CI/CD</span><span class="muted">Strong</span></div><div class="bar"><i class="bar-fill" style="width:74%"></i></div></div>
+            <div class="skill-row"><div class="meta"><span>Python / Go</span><span class="muted">Strong</span></div><div class="bar"><i class="bar-fill" style="width:72%"></i></div></div>
           </div>
         </div>
 
-        <!-- Contact card (separate, prevents overlap) -->
-        <div class="card aside-card contact-card" style="margin-top:14px" aria-labelledby="contactTitle">
-          <h2 id="contactTitle">Contact</h2>
-          <small class="muted">Open to opportunities • Collaboration • Consulting</small>
-          <div style="height:8px"></div>
+        <!-- Contact -->
+        <div class="card aside-card contact-card">
+          <h2>Contact</h2>
+          <small class="muted">Open to opportunities</small>
           <a href="mailto:pediredlagirishkumar@gmail.com" class="contact-link">pediredlagirishkumar@gmail.com</a>
-          <div style="height:6px"></div>
           <a href="tel:+918639848391" class="contact-link">+91 86398 48391</a>
-          <div style="height:6px"></div>
-          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener" class="contact-link">linkedin.com/in/pediredla-girish-kumar-ec675</a>
+          <a href="https://www.linkedin.com/in/pediredla-girish-kumar-ec675" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
         </div>
       </aside>
     </main>
 
     <footer>
-      <small>Portfolio auto-generated from uploaded resume.</small>
+      <small>Portfolio</small>
     </footer>
   </div>
 
   <script>
-    // theme toggle: remembers user choice and updates aria-pressed
     (function(){
       const root = document.documentElement;
       const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+      const prefersDark = window.matchMedia('(prefers-color-scheme:dark)').matches;
       root.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
-
       const toggle = document.getElementById('themeToggle');
       function setPressed(val){ toggle.setAttribute('aria-pressed', val === 'light' ? 'true' : 'false'); }
       setPressed(root.getAttribute('data-theme'));
-
       toggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        root.setAttribute('data-theme', current);
-        localStorage.setItem('theme', current);
-        setPressed(current);
+        const cur = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', cur);
+        localStorage.setItem('theme', cur);
+        setPressed(cur);
       });
     })();
   </script>
