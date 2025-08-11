@@ -1,2 +1,163 @@
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+/* ==========================================================================
+   Portfolio stylesheet — style.css
+   - Dark / Light theme via [data-theme="light"]
+   - Responsive layout, print-optimized
+   - Save as style.css and link from index.html
+   ========================================================================== */
+
+/* --------- Theme variables & base scale --------- */
+:root{
+    --bg: #0b1220;
+    --card: rgba(255,255,255,0.03);
+    --glass: rgba(255,255,255,0.02);
+    --muted: #9fb0c4;
+    --accent: #06b6d4;
+    --accent-2: #60a5fa;
+    --text: #e6eef6;
+    --radius: 12px;
+    --max-width: 1100px;
+    --base-font: 16px;
+    font-size: var(--base-font);
+  }
+  
+  /* Light theme overrides */
+  :root[data-theme="light"]{
+    --bg: #f6fafc;
+    --card: rgba(2,6,23,0.03);
+    --glass: rgba(2,6,23,0.03);
+    --muted: #475569;
+    --text: #0b1220;
+    --accent: #0ea5a2;
+  }
+  
+  /* --------- Reset & base --------- */
+  * { box-sizing: border-box; }
+  html,body { height:100%; margin:0; padding:0; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  body{
+    background: linear-gradient(180deg, var(--bg), #071226);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    line-height: 1.45;
+    font-size: 1rem;
+  }
+  
+  /* Page container */
+  .wrap { max-width: var(--max-width); margin: 28px auto; padding: 20px; }
+  
+  /* ---------- Header ---------- */
+  header.top {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  
+  /* brand block (logo + name) */
+  .brand { display:flex; gap:16px; align-items:center; }
+  .logo {
+    width: 68px; height: 68px; border-radius: 14px;
+    display:grid; place-items:center; font-weight:700; font-family: Merriweather, serif;
+    color: #022; font-size:1.05rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 8px 24px rgba(2,6,23,0.4);
+  }
+  
+  /* title */
+  .title-block h1 { margin:0; font-size:1.35rem; letter-spacing:0.2px; }
+  .title-block p { margin:3px 0 0; color: var(--muted); font-size:0.95rem; }
+  
+  /* header actions (buttons, theme toggle) */
+  .header-actions { display:flex; gap:10px; align-items:center; }
+  .btn {
+    display:inline-flex; align-items:center; gap:8px; padding:8px 12px;
+    border-radius:10px; font-weight:600; cursor:pointer; border:none;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color:#021326;
+  }
+  .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--text); }
+  .small{ font-size:0.9rem; padding:6px 10px; }
+  
+  /* ---------- Layout: main + sidebar ---------- */
+  main { display:grid; grid-template-columns: 1fr 360px; gap:20px; align-items:start; }
+  @media (max-width:980px){ main { grid-template-columns: 1fr 320px; } }
+  @media (max-width:820px){ main { grid-template-columns: 1fr; } }
+  
+  /* card base */
+  .card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 28px rgba(2,6,23,0.45);
+  }
+  
+  /* summary / about */
+  .summary { display:flex; gap:16px; align-items:flex-start; }
+  .profile-photo { width:116px; height:116px; border-radius:12px; object-fit:cover;
+    border:3px solid rgba(255,255,255,0.04); background: linear-gradient(180deg,#0b1220,#102033);
+  }
+  
+  /* headings & small utilities */
+  h2{ font-size:1.05rem; margin:0 0 10px; }
+  .muted { color: var(--muted); font-size:0.95rem; }
+  .muted-block { color: var(--muted); font-size:0.95rem; display:block; }
+  
+  /* ---------- Experience timeline ---------- */
+  .timeline { display:flex; flex-direction:column; gap:14px; }
+  .job { display:grid; grid-template-columns:120px 1fr; gap:12px; }
+  .job .period { color: var(--muted); font-size:0.9rem; }
+  .job h3 { margin:0; font-size:1rem; }
+  .job .company { margin:6px 0; color: var(--muted); }
+  
+  /* ---------- Projects ---------- */
+  .projects-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+  .project { background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+    padding:12px; border-radius:10px; transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .project:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(2,6,23,0.5); }
+  
+  /* ---------- Sidebar / skills ---------- */
+  aside .card { position: relative; z-index: 3; }
+  .stack { display:flex; flex-wrap:wrap; gap:8px; }
+  .chip { padding:6px 10px; border-radius:999px; background: var(--glass); color: var(--muted);
+    font-weight:600; font-size:0.86rem;
+  }
+  
+  /* skill bars */
+  .skill-row { display:flex; flex-direction:column; gap:6px; margin-bottom:10px; }
+  .skill-row .meta { display:flex; justify-content:space-between; font-size:0.92rem; color:var(--muted); }
+  .bar { height:12px; background: rgba(255,255,255,0.04); border-radius:999px; overflow:hidden; }
+  .bar-fill { display:block; height:100%; background: linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:0 6px 16px rgba(6,182,212,0.12); }
+  
+  /* ---------- Contact card ---------- */
+  .contact small { color:var(--muted); display:block; margin-bottom:8px; }
+  .contact-link { display:block; color: var(--text); font-weight:600; text-decoration:none; margin-bottom:6px; word-break:break-all; }
+  
+  /* ---------- Aside card sticky behavior & spacing fixes ---------- */
+  /* Make first aside card sticky on wide screens but provide a top offset
+     so it doesn't collide with header. */
+  @media (min-width:821px) {
+    aside { display:block; }
+    aside .aside-card:first-child { position: sticky; top: 88px; }
+  }
+  
+  /* ensure aside cards stack and have breathing room on small screens */
+  @media (max-width:820px) {
+    .profile-photo { margin: 0 auto; }
+    .job { grid-template-columns: 1fr; }
+    aside .aside-card { position: relative; top: 0; }
+  }
+  
+  /* ---------- Footer ---------- */
+  footer { margin-top:18px; text-align:center; color:var(--muted); font-size:0.88rem; }
+  
+  /* ---------- Print rules (single-page clean resume) ---------- */
+  @media print {
+    body { background: white; color: #111; }
+    .wrap { max-width: 800px; margin: 0; padding: 0; }
+    .btn, .header-actions, .logo { display: none; }
+    main { grid-template-columns: 1fr; gap: 8px; }
+    .card { box-shadow: none; border-radius: 0; padding: 8px; }
+    footer { display: none; }
+  }
+  
