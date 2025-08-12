@@ -266,7 +266,7 @@ aside {
         align-self: start;
     }
     aside .aside-card:first-child {
-        position: sticky;
+        position: relative;
         top: 24px;
         z-index: 1;
     }
